@@ -29,8 +29,6 @@ struct Employee {
 
 async fn get_all_employees(State(state): State<AppState>) -> Json<Vec<Employee>> {
     let employees = EmployeeModel::find().all(&state.db).await.unwrap();
-
-    // return a vector of Employee containing employees
     let mut employees_vec = Vec::new();
 
     for employee in employees {
