@@ -13,13 +13,21 @@ This repository aims to be a template for projects that want to utilize the tech
 
 - [Redis](https://redis.io/): Redis is a fast, in-memory data store for managing high-speed transactions and real-time analytics. Versatile and scalable, it's perfect for tough data management challenges.
 
--
-
-## Features
-
+- [SeaORM](https://github.com/SeaQL/sea-orm/): An async and dynamic Object Realtional Mapper (ORM) for Rust.
 
 ## Setup
 
-1. `git clone` this repository.
-2. `cd` into the project directory, `/axum-pg-redis`.
-3. run `cargo run` on your cli.
+1. Install [cargo-watch](https://crates.io/crates/cargo-watch) and [sea-orm-cli](https://crates.io/crates/sea-orm-cli):
+
+```sh
+cargo install cargo-watch sea-orm-cli
+```
+
+2. `git clone` this repository.
+3. `cd` into the project directory, `/axum-pg-redis`
+4. Create your copy of `.env.example`, omit `.example`, and setup your database.
+5. Use `sea-orm-cli migrate` to run migrations.
+
+> Refer to the [SeaORM docs](https://www.sea-ql.org/SeaORM/docs/index/) for more information.
+
+6. Use `cargo run` to install the project dependencies and to start the application.

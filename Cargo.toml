@@ -1,5 +1,5 @@
 [package]
-name = "axum-sdb-redis"
+name = "axum-pg-redis"
 version = "0.1.0"
 edition = "2021"
 
@@ -7,5 +7,9 @@ edition = "2021"
 
 [dependencies]
 axum = "0.6.4"
+dotenv_codegen = "0.15.0"
+log = "0.4.17"
 redis = "0.22.3"
-surrealdb = "1.0.0-beta.8"
+sea-orm = { version = "0.10.7", features = ["sqlx-postgres", "runtime-tokio-rustls", "macros"] }
+serde = "1.0.152"
+tokio = { version = "1.25.0", features = ["full"] }
