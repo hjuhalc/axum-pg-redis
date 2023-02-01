@@ -35,27 +35,4 @@ cargo install cargo-watch sea-orm-cli
 
 6. Use `cargo run` to install the project dependencies and to start the application.
 
-## Maintenance
-
-This section mainly discusses how we can maintain the stability and performance of the application in a single node. We'll only be going through the technologies mentioned above.
-
-### Axum
-
-
-
-Rust is hard to learn and axum is relatively easy to use. As much as possible, use built-in features and avoid reinventing the wheel.
-
-### PostgreSQL
-
-PostgreSQL can become pretty bloated over a period of time. It's recommended to remove some of the bloat and reclaim storage. A better solution is to prevent the problem in the first place. So to prevent bloat in a PostgreSQL database:
-
-1. Use the `autovacuum` feature to automatically reclaim dead space. You may manually run `VACUUM` from time to time, but avoid using `VACUUM FULL` [unless you know what you're doing](https://www.postgresql.org/docs/current/sql-vacuum.html). You may also use tools like [pgcompacttable](https://github.com/dataegret/pgcompacttable) and [pg_repack](https://reorg.github.io/pg_repack/).
-2. Enable [table partitioning](https://www.postgresql.org/docs/current/ddl-partitioning.html). You may also regularly truncate or drop large, unused tables.
-2. Regularly analyze tables using the `ANALYZE` command.
-3. Set `maintenance_work_mem` to a reasonable value for your system.
-4. Use the `CLUSTER` command sparingly.
-5. Use the right data types to avoid wasting space.
-
-### Redis
-
-### SeaORM
+## Project Structure
