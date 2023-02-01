@@ -5,10 +5,10 @@ use sea_orm::{
 };
 use tokio;
 
+use crate::models::*;
+
 #[path = "../models/mod.rs"]
 mod models;
-
-use crate::models::*;
 
 fn main() {
     let rt = tokio::runtime::Runtime::new().unwrap();
