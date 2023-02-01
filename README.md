@@ -1,4 +1,4 @@
-# axum-pg-redis
+# axum-pg-redis (WIP)
 
 A highly scalable backend template built with [axum](https://github.com/tokio-rs/axum/), [PostgreSQL](https://www.postgresql.org/), and [Redis](https://redis.io/).
 
@@ -12,7 +12,7 @@ This repository aims to be a template for projects that want to utilize the tech
 
 - [axum](https://github.com/tokio-rs/axum/): A Rust-based web framework that's simple to use and enables the creation of speedy and robust APIs and web applications.
 
-- [PostgreSQL](https://www.postgresql.org/): PostgreSQL is a free and open-source relational database management system known for its reliability, feature-richness, and performance.
+- [PostgreSQL](https://www.postgresql.org/): A free and open-source relational database management system known for its reliability, feature-richness, and performance.
 
 - [Redis](https://redis.io/): Redis is a fast, in-memory data store for managing high-speed transactions and real-time analytics. Versatile and scalable, it's perfect for tough data management challenges.
 
