@@ -10,11 +10,13 @@ impl MigrationTrait for Migration {
     async fn up(&self, manager: &SchemaManager) -> Result<(), DbErr> {
         let sql = r#"
         CREATE TABLE employees (
-            id SERIAL PRIMARY KEY,
-            name TEXT NOT NULL,
-            position TEXT NOT NULL,
-            department TEXT NOT NULL,
-            email TEXT
+            id          SERIAL PRIMARY KEY,
+            name        TEXT NOT NULL,
+            position    TEXT NOT NULL,
+            department  TEXT NOT NULL,
+            email       TEXT,
+            created_at  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
         )"#;
 
         let stmt = Statement::from_string(manager.get_database_backend(), sql.to_owned());
