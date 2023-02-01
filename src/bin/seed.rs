@@ -1,5 +1,8 @@
 use dotenv_codegen::dotenv;
-use sea_orm::{entity::prelude::*, Database, DatabaseConnection, Set};
+use sea_orm::{
+    entity::prelude::*, ConnectionTrait, Database, DatabaseBackend, DatabaseConnection, Set,
+    Statement,
+};
 use tokio;
 
 #[path = "../models/mod.rs"]
@@ -69,7 +72,13 @@ async fn seed_database() -> Result<(), DbErr> {
         }
     }
 
-    // let _ = employees::Entity::insert_many(employees).exec(&db).await?;
+    // Prevent duplicate primary key error when inserting new rows
+    let _: Option<QueryResult> = db
+        .query_one(Statement::from_string(
+            DatabaseBackend::MySql,
+            "SELECT setval('employees_id_seq', (SELECT MAX(id) FROM employees));".to_owned(),
+        ))
+        .await?;
 
     Ok(())
 }
