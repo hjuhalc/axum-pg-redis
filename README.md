@@ -4,7 +4,7 @@ A highly scalable backend template built with [axum](https://github.com/tokio-rs
 
 ## Why axum?
 
-Quite simple: Because it's built using Rust, a programming language that is safe by default. It's harder to introduce crashes, security vulnerabilities, or other unintended behavior in a Rust application. Aside from its safety features, Rust is insanely fast. Some would even say, ["Blazingly fast!"](https://i.redd.it/kczaqedt9ww81.jpg)
+Quite simple: It's ergonomic. And because it's built using Rust, a programming language that is safe by default. It's harder to introduce crashes, security vulnerabilities, or other unintended behavior in a Rust application. Aside from its safety features, Rust is insanely fast. Some would even say, ["Blazingly fast!"](https://i.redd.it/kczaqedt9ww81.jpg)
 
 This repository aims to be a template for projects that want to utilize the technologies mentioned in the header. It also aims to be super speedy. In a single node and on a normal day, it should be able to handle a few hundred thousand concurrent requests as shown [here](https://web-frameworks-benchmark.netlify.app/compare?f=axum,laravel,fastify,fastapi) and [here](https://github.com/programatik29/rust-web-benchmarks/blob/master/result/hello-world.md).
 
